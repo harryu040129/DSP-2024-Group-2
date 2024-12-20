@@ -11,7 +11,7 @@ BASE_URL = 'https://www.ytn.co.kr/search/index.php'
 
 visited_titles = set()
 results = []
-async def main(search_query, target_words, start_year, end_year, end_month=12):
+async def main(search_query, start_year, end_year, end_month=12):
     tasks = []
     async with aiohttp.ClientSession() as session:
         urls = []
@@ -70,7 +70,6 @@ def crawl(html, current_date):
             'date': current_date.strftime('%Y-%m-%d')
         })
 
-target_words = ['저당', '저칼로리', '제로', '저지방', '저탄소', '식물성']
 news_results = []
 async def fetch(session, url, current_date):
    try:
@@ -92,9 +91,7 @@ if __name__ == '__main__':
 
     # Scrape data
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(main(search_query_1, target_words, start_year, end_year, end_month))
-    #loop.run_until_complete(main(search_query_2, target_words, start_year, end_year, end_month))
-    #loop.run_until_complete(main(search_query_3, target_words, start_year, end_year, end_month))
+    loop.run_until_complete(main(search_query_1, start_year, end_year, end_month))
 
     # Save to CSV
     output_file = 'ytn_monthly_당뇨.csv'
