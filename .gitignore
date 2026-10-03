@@ -1,0 +1,10 @@
+# Local Python/Jupyter files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+.env
+.env.*
+!.env.example

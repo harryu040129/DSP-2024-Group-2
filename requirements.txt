@@ -1,0 +1,12 @@
+# Dependencies inferred from notebook imports; not a tested lockfile.
+jupyterlab
+numpy
+pandas
+matplotlib
+seaborn
+statsmodels
+mlxtend
+adjustText
+requests
+beautifulsoup4
+aiohttp
